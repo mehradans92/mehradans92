@@ -13,19 +13,20 @@ jobs:
         with:
           ref: output
 
-      - uses: Platane/snk@master
-        id: snake-gif
+      - uses: Platane/snk@v3
         with:
-          github_user_name: mehradans92
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
 
-      - run: git status
-
-      # Add, commit and push changes manually
-      - run: |
-          git config user.name "GitHub Actions"
-          git config user.email "github-actions@github.com"
-          git add .
-          git commit -m "Update snake gif and svg"
-          git push https://${{secrets.WORKFLOW_TOKEN}}@github.com/mehradans92/mehradans92.git HEAD:output
+      - name: Commit and push
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+          git add dist/
+          git commit -m "Automated snake update"
+          git push
