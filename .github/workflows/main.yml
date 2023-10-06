@@ -39,4 +39,4 @@ jobs:
           target_branch: output
           build_dir: dist
         env:
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
+          GITHUB_TOKEN : ${{ secrets.WORKFLOW_TOKEN }}
