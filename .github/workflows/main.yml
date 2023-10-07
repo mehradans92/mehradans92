@@ -15,8 +15,8 @@ jobs:
           github_user_name: mehradans92
           
           outputs: |
-            dist/github-snake.svg?color_dots=#161B22,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-            # dist/ocean.gif
+            dist/github-snake.svg?palette=github-dark
+            # dist/ocean.gif?color_dots=#161B22,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
       
         env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
