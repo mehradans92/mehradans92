@@ -15,7 +15,7 @@ jobs:
           github_user_name: mehradans92
           
           outputs: |
-            dist/github-snake.svg
+            dist/github-snake.svg?color_dots=#161B22
             # dist/ocean.gif
       
         env:
