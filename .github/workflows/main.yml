@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Snake Animation
-      - uses: Platane/snk@v2.3.0
+      - uses: Platane//snk/svg-only@v2
         id: snake-gif
         with:
           github_user_name: mehradans92
           
           outputs: |
             dist/github-snake.svg
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            # dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
             
 
       - uses: crazy-max/ghaction-github-pages@v2.1.3
